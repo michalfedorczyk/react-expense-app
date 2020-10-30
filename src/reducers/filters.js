@@ -1,5 +1,5 @@
 const filtersReducerDefaultState = {
-  text: "rent",
+  text: "",
   sortBy: "amount",
   startDate: undefined,
   endDate: undefined,
