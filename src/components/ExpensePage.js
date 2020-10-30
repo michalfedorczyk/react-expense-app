@@ -1,8 +1,9 @@
 import React from "react";
+import ExpenseList from "./ExpenseList";
 
 const ExpensePage = () => (
   <div>
-    <h1>Strona Główna</h1>
+    <ExpenseList />
   </div>
 );
 
