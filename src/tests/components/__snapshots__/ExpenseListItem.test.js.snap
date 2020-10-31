@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render expense item correctly 1`] = `
+<div>
+  <[object Object]
+    to="/edit/1"
+  >
+    <h3>
+      Description: 
+      Gum
+    </h3>
+  </[object Object]>
+  <p>
+    Note: 
+    Pies Gum
+  </p>
+  <p>
+    Amount: 
+    123
+     - created at: 
+    0
+  </p>
+</div>
+`;
