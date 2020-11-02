@@ -3,8 +3,15 @@ import { shallow } from "enzyme";
 import { ExpenseListFilters } from "../../components/ExpenseListFilters";
 import expenses from "../fixtures/expenses";
 import { filters, altFilters } from "../fixtures/filters";
+import moment from "moment";
 
-let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper;
+let setTextFilter,
+  sortByDate,
+  sortByAmount,
+  setStartDate,
+  setEndDate,
+  wrapper,
+  onFocusChange;
 
 beforeEach(() => {
   setTextFilter = jest.fn();
@@ -41,12 +48,33 @@ test("should handle text change", () => {
 
 test("should sort by date", () => {
   const value = "date";
-  wrapper.find("option").at(1).simulate("change", { target: { value } });
-  expect(sortByDate).value.toBe(value);
+  wrapper.setProps({
+    filters: altFilters,
+  });
+  wrapper.find("select").simulate("change", {
+    target: { value },
+  });
+  expect(sortByDate).toHaveBeenCalled();
 });
 
-test("should sort by amount", () => {});
+test("should sort by amount", () => {
+  const value = "amount";
+  wrapper.find("select").simulate("change", {
+    target: { value },
+  });
+  expect(sortByAmount).toHaveBeenCalled();
+});
 
-test("should handle date changes", () => {});
+test("should handle date changes", () => {
+  const startDate = moment().add(10, "years");
+  const endDate = moment().add(15, "years");
+  wrapper.find("DateRangePicker").prop("onDatesChange")({ startDate, endDate });
+  expect(setStartDate).toHaveBeenLastCalledWith(startDate);
+  expect(setEndDate).toHaveBeenLastCalledWith(endDate);
+});
 
-test("should handle focus changes", () => {});
+test("should handle focus changes", () => {
+  const calendarFocused = "endDate";
+  wrapper.find("DateRangePicker").prop("onFocusChange")(calendarFocused);
+  expect(wrapper.state("calendarFocused")).toBe(calendarFocused);
+});
