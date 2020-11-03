@@ -1,8 +1,6 @@
 # Folders
-
 node_modules/
 src/playground
 
 # Files
-
 public/dist

@@ -16,9 +16,10 @@ exports[`should render expense item correctly 1`] = `
   </p>
   <p>
     Amount: 
-    123
-     - created at: 
-    0
+    $1.23
+     - created at:
+     
+    January 1st, 1970
   </p>
 </div>
 `;
