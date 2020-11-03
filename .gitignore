@@ -5,8 +5,4 @@ src/playground
 
 # Files
 
-public/bundle.js
-public/bundle.js.map
-public/styles.css
-public/styles.css.map
-public/bundle.js.LICENSE.txt
+public/dist
