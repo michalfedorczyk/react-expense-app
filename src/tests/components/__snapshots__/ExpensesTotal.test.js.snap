@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render Expenses Test with 1 expanse 1`] = `
+<div>
+  <h4>
+    Viewing 
+    1
+     
+    expense
+     totalling 
+    $235.00
+    .
+  </h4>
+</div>
+`;
+
+exports[`should correctly render Expenses Test with multiple expanses 1`] = `
+<div>
+  <h4>
+    Viewing 
+    3
+     
+    expenses
+     totalling 
+    $500.00
+    .
+  </h4>
+</div>
+`;
