@@ -1,6 +1,13 @@
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
+
+if (process.env.NODE_ENV === "test") {
+  require("dotenv").config({ path: "config/.env.test" });
+} else if (process.env.NODE_ENV === "development") {
+  require("dotenv").config({ path: "config/.env.development" });
+}
 
 const plugins = [
   new MiniCssExtractPlugin({ filename: "styles.css" }),
@@ -26,14 +33,6 @@ const plugins = [
     "process.env.FIREBASE_APP_ID": JSON.stringify(process.env.FIREBASE_APP_ID),
   }),
 ];
-
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
-
-if (process.env.NODE_ENV === "test") {
-  require("dotenv").config({ path: "./config/.env.test" });
-} else if (process.env.NODE_ENV === "development") {
-  require("dotenv").config({ path: "./config/.env.development" });
-}
 
 module.exports = (env) => {
   const isProduction = env === "production";
