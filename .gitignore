@@ -5,7 +5,6 @@ config/
 
 # Files
 public/dist
-src/firebase/
 
 .env.test
 .env.development
