@@ -46,7 +46,7 @@ export const setExpenses = (expenses) => ({
   expenses,
 });
 
-export const startSetExpenses = (expensesData = {}) => {
+export const startSetExpenses = () => {
   return (dispatch) => {
     return database
       .ref("expenses")
@@ -60,8 +60,8 @@ export const startSetExpenses = (expensesData = {}) => {
             ...childSnapshot.val(),
           });
         });
-        expensesData = expenses;
-        dispatch(setExpenses(expensesData));
+
+        dispatch(setExpenses(expenses));
       });
   };
 };
