@@ -18,6 +18,11 @@ exports[`should render Header correctly 1`] = `
   >
     Create Expense
   </[object Object]>
+  <button
+    onClick={[Function]}
+  >
+    Logout
+  </button>
   <[object Object]
     activeClassName="is-active"
     to="/help"
