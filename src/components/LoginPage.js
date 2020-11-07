@@ -6,9 +6,9 @@ export const LoginPage = ({ startLogin }) => (
   <div className="box-layout">
     <div className="box-layout__box">
       <h1 className="box-layout__title">
-        <i class="fas fa-money-bill-alt"> </i> Manage Expenses
+        <i class="fas fa-money-bill-alt"> </i> Expenses
       </h1>
-      <p>It's time to manage your expenses.</p>
+      <p>Start to manage your expenses.</p>
       <button className="button" onClick={startLogin}>
         <i className="fab fa-google"></i> Login with Google
       </button>
