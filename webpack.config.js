@@ -57,6 +57,7 @@ module.exports = (env) => {
               loader: "css-loader",
               options: {
                 sourceMap: true,
+                url: false,
               },
             },
             {
@@ -67,6 +68,17 @@ module.exports = (env) => {
             },
           ],
         },
+        // {
+        //   test: /\.(png|jpg|gif)$/i,
+        //   use: [
+        //     {
+        //       loader: "url-loader",
+        //       options: {
+        //         limit: 8192,
+        //       },
+        //     },
+        //   ],
+        // },
       ],
     },
     plugins,
